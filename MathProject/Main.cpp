@@ -1,6 +1,11 @@
 #include <iostream>
 using namespace std;
 
+// multiplication function
+double Multiply(double num1, double num2) {
+	return num1 * num2;
+}
+
 int main() {
 
 	// declare variables
@@ -13,7 +18,7 @@ int main() {
 	cin >> num2;
 	
 	// multiply and return the output
-	product = num1 * num2;
+	product = Multiply(num1, num2);
 	cout << "Answer: " << product << std::endl;
 	cin.get();
 }
