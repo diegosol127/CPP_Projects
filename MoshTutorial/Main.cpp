@@ -4,16 +4,16 @@
 using namespace std;
 
 int main() {
+	
+	double radius;
+	double area;
 
-	double input;
-	double output;
+	const double pi = 2 * acos(0.0);
+	cout << "Enter radius of circle: ";
+	cin >> radius;
 
-	cout << "Enter tempterature in Fahrenheit: ";
-	cin >> input;
-
-	output = (input - 32) * 5 / 9;
-
-	cout << "Temperature in Celcius is " << output;
+	area = pi * pow(radius, 2);
+	cout << "Area of circle: " << area;
 
 	return 0;
 }
