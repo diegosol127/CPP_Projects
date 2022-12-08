@@ -1,19 +1,29 @@
 #include <iostream>
-#include <cmath>
+#include <ctime>
 
 using namespace std;
 
 int main() {
-	
-	double radius;
-	double area;
 
-	const double pi = 2 * acos(0.0);
-	cout << "Enter radius of circle: ";
-	cin >> radius;
+	// loop condition
+	bool rollDice = 1;
+	while(rollDice){
 
-	area = pi * pow(radius, 2);
-	cout << "Area of circle: " << area;
+		// specify min and max values for random number generator
+		const int minVal = 1;
+		const int maxVal = 6;
+
+		// generate 2 random numbers
+		srand(time(NULL));
+		short roll_1 = (rand() % (maxVal - minVal + 1)) + minVal;
+		short roll_2 = (rand() % (maxVal - minVal + 1)) + minVal;
+
+		// print to console
+		cout << roll_1 << ", " << roll_2 << endl;
+		cout << "Enter 1 to roll again. Enter 0 to exit: ";
+		cin >> rollDice;
+		cout << endl;
+	}
 
 	return 0;
 }
