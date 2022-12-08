@@ -6,10 +6,8 @@ using namespace std;
 int main() {
 
 	// loop condition
-	const int maxIter = 99;
-	int iter = 1;
 	bool rollDice = 1;
-	while(rollDice && (iter <= maxIter), iter++) {
+	while(rollDice){
 
 		// specify min and max values for random number generator
 		const int minVal = 1;
@@ -25,10 +23,6 @@ int main() {
 		cout << "Enter 1 to roll again. Enter 0 to exit: ";
 		cin >> rollDice;
 		cout << endl;
-		if ((rollDice != 0) && (rollDice != 1)) {
-			cout << "Invalid entry";
-			rollDice = 0;
-		}
 	}
 
 	return 0;
