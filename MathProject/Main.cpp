@@ -21,4 +21,6 @@ int main() {
 	product = Multiply(num1, num2);
 	cout << "Answer: " << product << std::endl;
 	cin.get();
+
+	return 0;
 }
