@@ -1,41 +1,48 @@
-// Classes are a way to group data or functionality together
-// Classes have unique names
-// Classes are private by default
-// Inheritance is usually reserved for classes
-// ==================================================================================
-// Structs are essentially the same as classes except that they are public by default
-// Structs are typically very simple and just contain simple data
+// VIEW PREVIOUS COMMITS FOR MORE INFO ON CLASSES AND STRUCTS
 
 #include <iostream>
 
 using namespace std;
 
-class Player {
-	// Class variables that are able to be accessed outside of this class
+class Log {
 public:
-	int x, y;
-	int velX, velY;
+	const int LogLevelError = 0;
+	const int LogLevelWarning = 1;
+	const int LogLevelInfo = 2;
+private:
+	int m_LogLevel = LogLevelInfo; // "m_" lets us know that it is class member variable that is private
 
-	// Functions inside classes are called "Methods"
-	void Move(int x, int y) {
-		x += x * velX;
-		y += y * velY;
+public:
+	void SetLevel(int level) {
+		m_LogLevel = level;
 	}
-};
 
-struct Vec2 {
-	float x, y;
+	void Error(const char* message) {
+		if (m_LogLevel >= LogLevelError) {
+			cout << "[ERROR]: " << message << endl;
+		}
+	}
 
-	void Add(const Vec2& other) {
-		x += other.x;
-		y += other.y;
+	void Warn(const char* message) {
+		if (m_LogLevel >= LogLevelWarning) {
+			cout << "[WARNING]: " << message << endl;
+		}
+	}
+
+	void Info(const char* message) {
+		if (m_LogLevel >= LogLevelInfo) {
+			cout << "[INFO]: " << message << endl;
+		}
 	}
 };
 
 int main() {
 
-	Player player;
-	player.Move(-1, 1);
+	Log log;
+	log.SetLevel(log.LogLevelWarning);
+	log.Warn("Hello!");
+	log.Error("Hello!");
+	log.Info("Hello!");
 
 	cin.get();
 }
