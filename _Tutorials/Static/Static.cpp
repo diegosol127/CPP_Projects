@@ -13,6 +13,12 @@
 // - the variable will share memory with all of the instances of that class/struct
 // - across all instances of that class/struct there will only be one instance of that static variable
 // - similar concept to static methods inside classes
+//
+// - if used on a variable, there will only be one instance of that variable across all instances of the class
+// - similarly with methods, you do not have access to a class instance of a method; a static method can be
+//   called without a class instance. Inside a static method you cannot have code which refers to a single
+//   class instance.
+// - static methods cannot access non-static variables because static methods do not have a class instance
 
 
 // Define a variable to be static - will only be linked internally inside this translation unit
