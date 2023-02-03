@@ -17,7 +17,6 @@ void IncrementPtr(int* value) {
 
 // Same incrementation funtion but it takes a refernece and increments the value of the referenced variable
 void IncrementRef(int& value) {
-	// dereference "value" to write to memory instead of modifying the pointer itself
 	value++;
 }
 
