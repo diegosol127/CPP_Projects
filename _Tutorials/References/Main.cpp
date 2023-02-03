@@ -71,7 +71,7 @@ int main() {
 	LOG("c = " << c);
 	LOG("d = " << d);
 
-	// we need to create a variable that can point to "c" first and then later o switch it to point to "d"
+	// we need to create a variable that can point to "c" first and then later switch it to point to "d"
 	int* newRef = &c; // pointer that contains memory address of "c"
 	// change the value of "c" in memory using its pointer by dereferencing it first
 	*newRef = 2;
